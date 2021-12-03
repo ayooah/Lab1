@@ -1,8 +1,13 @@
-import Models.Contract;
+package utils;
+
+import models.Contract;
 
 import java.util.Optional;
+import java.util.function.Predicate;
+
 /**
- * ArrayRepository class is a dynamically expanding array that implements the {@code Repository} interface
+ * utils.ArrayRepository class is a dynamically expanding array that implements the {@code utils.Repository} interface
+ *
  * @param <T> the type of elements in this repository
  * @autor Anna Ushakova
  */
@@ -23,26 +28,30 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
      * Length of array
      */
     private int length;
+
     /**
      * Constructs a repository of initional size
      */
     public ArrayRepository() {
         this.arr = (T[]) new Contract[initionalSize];
-        this.length=initionalSize;
+        this.length = initionalSize;
     }
+
     /**
      * @return count of not null element in repository
      */
     public int getSize() {
         return size;
     }
+
     /**
      * Appends a contract to the end of the repository
+     *
      * @param contract added to the repository
      */
     public void add(T contract) {
         if (this.size >= this.length) {
-            this.length*=2;
+            this.length *= 2;
             T[] prevArr = this.arr;
             this.arr = (T[]) new Contract[this.length];
             System.arraycopy(prevArr, 0, this.arr, 0, this.size);
@@ -50,8 +59,25 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
         this.arr[size] = contract;
         size++;
     }
+
+    public void addByIndex(T contract, int index) {
+
+        T[] prevArr = this.arr;
+
+        if (this.size >= this.length) {
+            this.length *= 2;
+        }
+        this.arr = (T[]) new Contract[this.length];
+        System.arraycopy(prevArr, 0, this.arr, 0, index);
+        this.arr[index] = contract;
+        System.arraycopy(prevArr, index, this.arr, index + 1, this.arr.length - index - 1);
+
+        size++;
+    }
+
     /**
      * Appends array of contracts to the end of the repository
+     *
      * @param arr added to the repository
      * @return true if operation success
      */
@@ -64,8 +90,10 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
         }
         return false;
     }
+
     /**
      * Removes a contract from the repository  with a specific id
+     *
      * @param id of the contract to be deleted
      */
     public boolean removeById(int id) {
@@ -78,8 +106,10 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
         }
         return false;
     }
+
     /**
      * Deletes a contract from the repository  in a certain position
+     *
      * @param index of deletions
      */
     public void removeByIndex(int index) {
@@ -94,8 +124,29 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
         size--;
 
     }
+
+    /**
+     * Returns a repository with matching items
+     *
+     * @param p             predicate
+     * @param expectedClass
+     * @return the found repository
+     */
+    public Repository<T> search(Predicate p, Class expectedClass) {
+        Repository<T> res = new ArrayRepository<>();
+        for (int i = 0; i < this.size; i++) {
+
+            if ((expectedClass == this.arr[i].getClass() || expectedClass == Contract.class)
+                    && p.test(this.arr[i])) {
+                res.add(this.arr[i]);
+            }
+        }
+        return res;
+    }
+
     /**
      * Returns a contract with a specific id from the repository
+     *
      * @param id of the contract
      * @return the found contract
      */
@@ -107,8 +158,10 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
         }
         return null;
     }
+
     /**
      * Returns a contract at a specific index in the repository
+     *
      * @param index of the contract
      * @return an Optional with the specified present non-null value.
      */

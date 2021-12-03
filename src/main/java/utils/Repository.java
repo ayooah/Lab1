@@ -1,6 +1,10 @@
+package utils;
+
 import java.util.Optional;
+import java.util.function.Predicate;
+
 /**
- * Repository interface contains the main methods for processing data in the repository
+ * utils.Repository interface contains the main methods for processing data in the repository
  * @param <T> the type of elements in this repository
  * @autor Anna Ushakova
  */
@@ -12,5 +16,6 @@ public interface Repository<T> {
     boolean addArr(T[] arr);
     Optional<T> getbyIndex(int index);
     void removeByIndex(int index);
-
+    Repository<T> search(Predicate p,Class expectedClass);
+    void addByIndex(T contract,int index);
 }

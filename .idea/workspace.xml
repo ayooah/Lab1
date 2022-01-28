@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8042e5e5-23f3-43d8-b39f-3b2e434c1039" name="Default Changelist" comment="" />
+    <list default="true" id="8042e5e5-23f3-43d8-b39f-3b2e434c1039" name="Default Changelist" comment="task3">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/input.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Channels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Channels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/InternetContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/InternetContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/MobileContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MobileContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/TelevisionContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TelevisionContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Test.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,21 +30,46 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="d061c95b-3dbb-4baf-bd63-e46c791445f6" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="200Bg1OrIJRCCEVxr36FYsv85G8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="E:/Рабочий стол/firstproject" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.testRunning" />
   </component>
-  <component name="RunManager" selected="JUnit.Test.testGetSize">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Lab1\src\test\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Test.testCsvConverter">
     <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab1" />
       <option name="PACKAGE_NAME" value="" />
@@ -39,21 +79,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testGetLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.testAddByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testGetLength" />
+      <option name="METHOD_NAME" value="testAddByIndex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testGetSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.testCsvConverter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testGetSize" />
+      <option name="METHOD_NAME" value="testCsvConverter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.testSearchByParam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="METHOD_NAME" value="testSearchByParam" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.testSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="METHOD_NAME" value="testSort" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -61,9 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Test.testGetSize" />
+        <item itemvalue="JUnit.Test.testCsvConverter" />
         <item itemvalue="JUnit.Test" />
-        <item itemvalue="JUnit.Test.testGetLength" />
+        <item itemvalue="JUnit.Test.testSort" />
+        <item itemvalue="JUnit.Test.testSearchByParam" />
+        <item itemvalue="JUnit.Test.testAddByIndex" />
       </list>
     </recent_temporary>
   </component>
@@ -79,6 +141,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -89,79 +152,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635171731508</updated>
+      <workItem from="1642100487803" duration="316000" />
+      <workItem from="1642774907001" duration="1004000" />
+      <workItem from="1643201575455" duration="63000" />
+      <workItem from="1643363129252" duration="7782000" />
+      <workItem from="1643379914801" duration="4274000" />
     </task>
+    <task id="LOCAL-00001" summary="task2">
+      <created>1638572592819</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638572592819</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="1032" y="181" key="#Project_Structure" timestamp="1635606149063">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1032" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1635606149063" />
-    <state x="1245" y="238" key="#com.intellij.ide.util.MemberChooser" timestamp="1635606728130">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1245" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1635606728130" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1635687676618">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1635687676618" />
-    <state width="1877" height="111" key="GridCell.Tab.0.bottom" timestamp="1635686984013">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="111" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635686984013" />
-    <state width="1877" height="111" key="GridCell.Tab.0.center" timestamp="1635686984013">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="111" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635686984013" />
-    <state width="1877" height="111" key="GridCell.Tab.0.left" timestamp="1635686984013">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="111" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635686984013" />
-    <state width="1877" height="111" key="GridCell.Tab.0.right" timestamp="1635686984013">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="111" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635686984013" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1635620610949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635620610949" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1635620610949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635620610949" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1635620610949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635620610949" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1635620610949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635620610949" />
-    <state x="440" y="93" key="SettingsEditor" timestamp="1635691002952">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1635691002952" />
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1635590781532">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635590781532" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1635175808396">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635175808396" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Test.java</url>
-          <line>63</line>
-          <properties class="Test" method="testRemoveById">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="task2" />
+    <MESSAGE value="task3" />
+    <option name="LAST_COMMIT_MESSAGE" value="task3" />
   </component>
 </project>

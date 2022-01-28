@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 import java.time.LocalDate;
 /**
@@ -16,6 +16,9 @@ public class MobileContract extends Contract {
      * Count of sms in the contract
      */
     private  int countSms;
+
+
+
     /**
      * Count of gb traffic in the contract
      */
@@ -35,6 +38,29 @@ public class MobileContract extends Contract {
         super(id, start, end, number, owner);
         this.countMinutes = countMinutes;
         this.countSms = countSms;
+        this.countGbTraffic = countGbTraffic;
+    }
+    public int getCountMinutes() {
+        return countMinutes;
+    }
+
+    public void setCountMinutes(int countMinutes) {
+        this.countMinutes = countMinutes;
+    }
+
+    public int getCountSms() {
+        return countSms;
+    }
+
+    public void setCountSms(int countSms) {
+        this.countSms = countSms;
+    }
+
+    public int getCountGbTraffic() {
+        return countGbTraffic;
+    }
+
+    public void setCountGbTraffic(int countGbTraffic) {
         this.countGbTraffic = countGbTraffic;
     }
 

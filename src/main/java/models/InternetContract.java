@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 import java.time.LocalDate;
 /**
@@ -8,6 +8,8 @@ import java.time.LocalDate;
  * @autor Anna Ushakova
  */
 public class InternetContract extends Contract {
+
+
     /**
      * Internet connection speed in the contract
      */
@@ -23,6 +25,13 @@ public class InternetContract extends Contract {
      */
     public InternetContract(int id, LocalDate start, LocalDate end, int number, Person owner, int connectionSpeed) {
         super(id, start, end, number, owner);
+        this.connectionSpeed = connectionSpeed;
+    }
+    public int getConnectionSpeed() {
+        return connectionSpeed;
+    }
+
+    public void setConnectionSpeed(int connectionSpeed) {
         this.connectionSpeed = connectionSpeed;
     }
 }

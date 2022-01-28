@@ -1,4 +1,4 @@
-package Models;
+package models;
 import java.time.LocalDate;
 import java.util.List;
 /**
@@ -8,6 +8,8 @@ import java.util.List;
  * @autor Anna Ushakova
  */
 public class TelevisionContract extends Contract {
+
+
     /**
      * The list of channels in the contract
      */
@@ -23,6 +25,13 @@ public class TelevisionContract extends Contract {
      */
     public TelevisionContract(int id, LocalDate start, LocalDate end, int number, Person owner, List<Channels> channelsList) {
         super(id, start, end, number, owner);
+        this.channelsList = channelsList;
+    }
+    public List<Channels> getChannelsList() {
+        return channelsList;
+    }
+
+    public void setChannelsList(List<Channels> channelsList) {
         this.channelsList = channelsList;
     }
 }

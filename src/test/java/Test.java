@@ -146,4 +146,11 @@ public class Test {
         assertEquals(2018, repository.getbyIndex(0).get().getStart().getYear());
 
     }
+    @org.junit.jupiter.api.Test
+    void testCsvConverter() {
+        CsvConverter csvConverter =new CsvConverter();
+        csvConverter.csvToRepository("src/test/java/input.csv",repository);
+        assertEquals(7,repository.getSize());
+        assertEquals(4,repository.getbyIndex(6).get().getId());
+    }
 }

@@ -1,7 +1,7 @@
-package utils;
+package utils.sorters;
 
 import models.Contract;
-import utils.Sorter;
+import utils.Repository;
 
 import java.util.Comparator;
 

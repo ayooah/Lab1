@@ -1,6 +1,8 @@
 package utils;
 
 import models.*;
+import utils.validators.ContractValidator;
+import utils.validators.MobileValidator;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,9 +18,12 @@ public class CsvConverter {
         String line;
         String[] arr;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        ContractValidator contractValidator=new ContractValidator();
+        MobileValidator mobileValidator=new MobileValidator();
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
             while (!Objects.equals(line = br.readLine(), "")){
                 arr=line.split(";");
+                List<String> valresult;
                 Person person=new Person(Integer.parseInt( arr[4]),arr[5],
                         LocalDate.parse(arr[6],formatter),arr[7],arr[8]);
                 switch (arr[9]){
@@ -26,20 +31,30 @@ public class CsvConverter {
                         InternetContract internetContract= new InternetContract(Integer.parseInt( arr[0]),
                                 LocalDate.parse(arr[1],formatter),LocalDate.parse(arr[2],formatter),
                                 Integer.parseInt( arr[3]),person, Integer.parseInt( arr[10]));
-                        repository.add(internetContract);
+                         valresult= contractValidator.validate(internetContract);
+                        if (valresult.isEmpty()){
+                            repository.add(internetContract);
+                        }
+
                         break;
                     case ("Mobile"):
                         MobileContract mobileContract=new MobileContract(Integer.parseInt( arr[0]),
                                 LocalDate.parse(arr[1],formatter),LocalDate.parse(arr[2],formatter),
                                 Integer.parseInt( arr[3]),person,Integer.parseInt( arr[10]),
                                 Integer.parseInt( arr[11]), Integer.parseInt( arr[12]));
-                        repository.add(mobileContract);
+                         valresult= mobileValidator.validate(mobileContract);
+                        if (valresult.isEmpty()){
+                            repository.add(mobileContract);
+                        }
                         break;
                     case ("Television"):
                         TelevisionContract televisionContract=new TelevisionContract(Integer.parseInt( arr[0]),
                                 LocalDate.parse(arr[1],formatter),LocalDate.parse(arr[2],formatter),
                                 Integer.parseInt( arr[3]),person,stringToChannel(arr[10]));
-                        repository.add(televisionContract);
+                        valresult= contractValidator.validate(televisionContract);
+                        if (valresult.isEmpty()){
+                            repository.add(televisionContract);
+                        }
                         break;
                 }
 

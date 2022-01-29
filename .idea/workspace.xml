@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8042e5e5-23f3-43d8-b39f-3b2e434c1039" name="Default Changelist" comment="task3">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/input.csv" afterDir="false" />
+    <list default="true" id="8042e5e5-23f3-43d8-b39f-3b2e434c1039" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/ContractValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/MobileValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/inputValidate.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Channels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Channels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/InternetContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/InternetContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/MobileContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MobileContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/TelevisionContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/TelevisionContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/BubbleSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/sorters/BubbleSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/CsvConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CsvConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SelectionSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/sorters/SelectionSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Sorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/sorters/Sorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Test.class" afterDir="false" />
     </list>
@@ -32,9 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="d061c95b-3dbb-4baf-bd63-e46c791445f6" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,18 +54,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.testRunning" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\Lab1\src\test\java" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projects\Lab1\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test.testCsvConverter">
+  <component name="RunManager" selected="JUnit.Test.testContractValidator">
     <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab1" />
       <option name="PACKAGE_NAME" value="" />
@@ -79,11 +78,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.testAddByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.testContractValidator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lab1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="METHOD_NAME" value="testAddByIndex" />
+      <option name="METHOD_NAME" value="testContractValidator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Test.testContractValidator" />
         <item itemvalue="JUnit.Test.testCsvConverter" />
         <item itemvalue="JUnit.Test" />
         <item itemvalue="JUnit.Test.testSort" />
         <item itemvalue="JUnit.Test.testSearchByParam" />
-        <item itemvalue="JUnit.Test.testAddByIndex" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +155,7 @@
       <workItem from="1642774907001" duration="1004000" />
       <workItem from="1643201575455" duration="63000" />
       <workItem from="1643363129252" duration="7782000" />
-      <workItem from="1643379914801" duration="4274000" />
+      <workItem from="1643379914801" duration="14897000" />
     </task>
     <task id="LOCAL-00001" summary="task2">
       <created>1638572592819</created>
@@ -165,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638572592819</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="task3">
+      <created>1643385464046</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643385464046</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

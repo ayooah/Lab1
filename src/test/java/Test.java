@@ -1,6 +1,9 @@
 import models.*;
 import org.junit.jupiter.api.BeforeEach;
 import utils.*;
+import utils.sorters.BubbleSorter;
+import utils.sorters.SelectionSorter;
+import utils.sorters.Sorter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -16,12 +19,12 @@ public class Test {
     @BeforeEach
     void setUp() {
         repository.add(new InternetContract(10, LocalDate.of(2021, 4, 2), LocalDate.of(2021, 5, 2), 10,
-                new Person(2, "UAA", LocalDate.of(1993, 2, 12), "female", "2017234108"), 300));
+                new Person(2, "UAA", LocalDate.of(1993, 2, 12), "female", "2017 234108"), 300));
 
         repository.add(new InternetContract(6, LocalDate.of(2018, 2, 4), LocalDate.of(2018, 5, 4), 8,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019564038"), 200));
+                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200));
         repository.add(new TelevisionContract(5, LocalDate.of(2020, 8, 25), LocalDate.of(2020, 9, 25), 5,
-                new Person(7, "AHN", LocalDate.of(1983, 12, 7), "female", "2007754108"), new ArrayList<>()));
+                new Person(7, "AHN", LocalDate.of(1983, 12, 7), "female", "2007 754108"), new ArrayList<>()));
 
     }
 
@@ -34,7 +37,7 @@ public class Test {
     @org.junit.jupiter.api.Test
     void testAdd() {
         repository.add(new TelevisionContract(11, LocalDate.of(2017, 8, 25), LocalDate.of(2020, 9, 25), 5,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019564038"), new ArrayList<>()));
+                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), new ArrayList<>()));
         int size = repository.getSize();
         assertEquals(4, size);
     }
@@ -55,9 +58,9 @@ public class Test {
     void testAddArr() {
         MobileContract[] arr = new MobileContract[2];
         arr[0] = new MobileContract(4, LocalDate.of(2019, 5, 24), LocalDate.of(2019, 6, 24), 6,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019564038"), 200, 100, 20);
+                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20);
         arr[1] = new MobileContract(3, LocalDate.of(2021, 4, 2), LocalDate.of(2021, 5, 2), 3,
-                new Person(2, "UAA", LocalDate.of(1993, 2, 12), "female", "2017234108"), 300, 200, 20);
+                new Person(2, "UAA", LocalDate.of(1993, 2, 12), "female", "2017 234108"), 300, 200, 20);
         repository.addArr(arr);
         int size = repository.getSize();
         assertEquals(5, size);
@@ -86,7 +89,7 @@ public class Test {
     @org.junit.jupiter.api.Test
     void testSearchByParam() {
         repository.add(new MobileContract(4, LocalDate.of(2019, 5, 24), LocalDate.of(2019, 6, 24), 6,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019564038"), 200, 100, 20));
+                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20));
 
         Predicate<Contract> SEARCH_BY_ID = a -> a.getId() < 5;
         assertEquals(1, repository.search(SEARCH_BY_ID, Contract.class).getSize());
@@ -105,7 +108,7 @@ public class Test {
     @org.junit.jupiter.api.Test
     void testAddByIndex() {
         repository.addByIndex(new MobileContract(4, LocalDate.of(2019, 5, 24), LocalDate.of(2019, 6, 24), 6,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019564038"), 200, 100, 20),
+                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20),
                 1);
         assertEquals(4, repository.getbyIndex(1).get().getId());
 
@@ -130,7 +133,7 @@ public class Test {
     @org.junit.jupiter.api.Test
     void testSort() {
         repository.add(new MobileContract(4, LocalDate.of(2019, 5, 24), LocalDate.of(2019, 6, 24), 6,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019564038"), 200, 100, 20));
+                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20));
 
         Sorter<Contract> bubbleSorter = new BubbleSorter();
         bubbleSorter.sort(repository,numComp);
@@ -152,5 +155,12 @@ public class Test {
         csvConverter.csvToRepository("src/test/java/input.csv",repository);
         assertEquals(7,repository.getSize());
         assertEquals(4,repository.getbyIndex(6).get().getId());
+    }
+    @org.junit.jupiter.api.Test
+    void testContractValidator() {
+        CsvConverter csvConverter =new CsvConverter();
+        csvConverter.csvToRepository("src/test/java/inputValidate.csv",repository);
+        assertEquals(4,repository.getSize());
+        assertEquals(4,repository.getbyIndex(3).get().getId());
     }
 }

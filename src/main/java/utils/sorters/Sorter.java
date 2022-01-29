@@ -1,4 +1,6 @@
-package utils;
+package utils.sorters;
+
+import utils.Repository;
 
 import java.util.Comparator;
 

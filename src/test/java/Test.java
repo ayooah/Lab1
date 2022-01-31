@@ -4,10 +4,15 @@ import utils.*;
 import utils.sorters.BubbleSorter;
 import utils.sorters.SelectionSorter;
 import utils.sorters.Sorter;
+import utils.validators.ContractValidator;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.ParameterizedType;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -108,11 +113,12 @@ public class Test {
     @org.junit.jupiter.api.Test
     void testAddByIndex() {
         repository.addByIndex(new MobileContract(4, LocalDate.of(2019, 5, 24), LocalDate.of(2019, 6, 24), 6,
-                new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20),
+                        new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20),
                 1);
         assertEquals(4, repository.getbyIndex(1).get().getId());
 
     }
+
     public static Comparator<Contract> numComp = new Comparator<Contract>() {
 
         @Override
@@ -124,43 +130,54 @@ public class Test {
 
         @Override
         public int compare(Contract c1, Contract c2) {
-            if(c1.getStart().isBefore(c2.getStart())){
+            if (c1.getStart().isBefore(c2.getStart())) {
                 return -1;
             }
             return 1;
         }
     };
+
     @org.junit.jupiter.api.Test
     void testSort() {
         repository.add(new MobileContract(4, LocalDate.of(2019, 5, 24), LocalDate.of(2019, 6, 24), 6,
                 new Person(1, "MTA", LocalDate.of(1997, 4, 15), "male", "2019 564038"), 200, 100, 20));
 
         Sorter<Contract> bubbleSorter = new BubbleSorter();
-        bubbleSorter.sort(repository,numComp);
+        bubbleSorter.sort(repository, numComp);
         assertEquals(5, repository.getbyIndex(0).get().getNumber());
-        bubbleSorter.sort(repository,yearComp);
+        bubbleSorter.sort(repository, yearComp);
         assertEquals(2018, repository.getbyIndex(0).get().getStart().getYear());
-        Sorter<Contract> selectionSorter =new SelectionSorter();
+        Sorter<Contract> selectionSorter = new SelectionSorter();
 
-        selectionSorter.sort(repository,numComp);
+        selectionSorter.sort(repository, numComp);
         assertEquals(5, repository.getbyIndex(0).get().getNumber());
 
-        selectionSorter.sort(repository,yearComp);
+        selectionSorter.sort(repository, yearComp);
         assertEquals(2018, repository.getbyIndex(0).get().getStart().getYear());
 
     }
+
     @org.junit.jupiter.api.Test
-    void testCsvConverter() {
-        CsvConverter csvConverter =new CsvConverter();
-        csvConverter.csvToRepository("src/test/java/input.csv",repository);
-        assertEquals(7,repository.getSize());
-        assertEquals(4,repository.getbyIndex(6).get().getId());
+    void testCsvConverter() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        CsvConverter csvConverter = Injector.inject(CsvConverter.class);
+        csvConverter.csvToRepository("src/test/java/input.csv", repository);
+
+        assertEquals(7, repository.getSize());
+        assertEquals(4, repository.getbyIndex(6).get().getId());
     }
+
     @org.junit.jupiter.api.Test
-    void testContractValidator() {
-        CsvConverter csvConverter =new CsvConverter();
-        csvConverter.csvToRepository("src/test/java/inputValidate.csv",repository);
-        assertEquals(4,repository.getSize());
-        assertEquals(4,repository.getbyIndex(3).get().getId());
+    void testContractValidator() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        CsvConverter csvConverter = Injector.inject(CsvConverter.class);
+
+        csvConverter.csvToRepository("src/test/java/inputValidate.csv", repository);
+        assertEquals(4, repository.getSize());
+        assertEquals(4, repository.getbyIndex(3).get().getId());
+    }
+
+    @org.junit.jupiter.api.Test
+    void testInjectSorter() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        ArrayRepository<Contract> rep = Injector.inject(ArrayRepository.class);
+        assertEquals(BubbleSorter.class, rep.getSorter().getClass());
     }
 }

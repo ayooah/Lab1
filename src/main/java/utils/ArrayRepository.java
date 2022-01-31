@@ -1,6 +1,9 @@
 package utils;
 
 import models.Contract;
+import utils.annotations.AutoInjectable;
+import utils.sorters.BubbleSorter;
+import utils.sorters.Sorter;
 
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -29,9 +32,17 @@ public class ArrayRepository<T extends Contract> implements Repository<T> {
      */
     private int length;
 
+    public Sorter<Contract> getSorter() {
+        return sorter;
+    }
+
+    @AutoInjectable
+    private BubbleSorter sorter;
+
     /**
      * Constructs a repository of initional size
      */
+
     public ArrayRepository() {
         this.arr = (T[]) new Contract[initionalSize];
         this.length = initionalSize;

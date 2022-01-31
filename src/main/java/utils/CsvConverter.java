@@ -1,8 +1,8 @@
 package utils;
 
 import models.*;
+import utils.annotations.ValidatorInjection;
 import utils.validators.ContractValidator;
-import utils.validators.MobileValidator;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,12 +14,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class CsvConverter {
+    @ValidatorInjection
+    private List<ContractValidator> validators;
+
     public Repository csvToRepository(String file,Repository repository){
         String line;
         String[] arr;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        ContractValidator contractValidator=new ContractValidator();
-        MobileValidator mobileValidator=new MobileValidator();
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
             while (!Objects.equals(line = br.readLine(), "")){
                 arr=line.split(";");
@@ -31,7 +32,7 @@ public class CsvConverter {
                         InternetContract internetContract= new InternetContract(Integer.parseInt( arr[0]),
                                 LocalDate.parse(arr[1],formatter),LocalDate.parse(arr[2],formatter),
                                 Integer.parseInt( arr[3]),person, Integer.parseInt( arr[10]));
-                         valresult= contractValidator.validate(internetContract);
+                         valresult= validators.get(0).validate(internetContract);
                         if (valresult.isEmpty()){
                             repository.add(internetContract);
                         }
@@ -42,7 +43,7 @@ public class CsvConverter {
                                 LocalDate.parse(arr[1],formatter),LocalDate.parse(arr[2],formatter),
                                 Integer.parseInt( arr[3]),person,Integer.parseInt( arr[10]),
                                 Integer.parseInt( arr[11]), Integer.parseInt( arr[12]));
-                         valresult= mobileValidator.validate(mobileContract);
+                         valresult= validators.get(1).validate(mobileContract);
                         if (valresult.isEmpty()){
                             repository.add(mobileContract);
                         }
@@ -51,7 +52,7 @@ public class CsvConverter {
                         TelevisionContract televisionContract=new TelevisionContract(Integer.parseInt( arr[0]),
                                 LocalDate.parse(arr[1],formatter),LocalDate.parse(arr[2],formatter),
                                 Integer.parseInt( arr[3]),person,stringToChannel(arr[10]));
-                        valresult= contractValidator.validate(televisionContract);
+                        valresult= validators.get(0).validate(televisionContract);
                         if (valresult.isEmpty()){
                             repository.add(televisionContract);
                         }
